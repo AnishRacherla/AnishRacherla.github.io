@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anish's Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Winky+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to right, #f3e7e9, #e3eeff);
+      font-family: 'Winky Sans', sans-serif;
+    }
+
+    .h{
+font-family:permanent;
+   font-size: 50px;
+font-weight: boldest;
+color: brown; }
+
+    .m {
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .photo, .image {
+      width: 100%;
+      max-width: 400px;
+      height: 500px;
+      border-radius: 16px;
+      border: 3px solid brown;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, opacity 0.8s ease;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .photo:hover, .image:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .information {
+      color: #333;
+      font-size: 20px;
+      font-family: 'Winky Sans', sans-serif;
+    }
+
+    .information li::marker {
+      color: #e07a5f;
+      font-size: 1.4em;
+    }
+
+    .description-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+
+    .images {
+      display: flex;
+     
+      gap: 20px;
+      padding-top: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2f2f2f;
+      color: white;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Projects Header -->
+  <section class="text-center py-16">
+    <h1 class="h">My First Project 🚗</h1>
+    <h2 class="m">Intelligent Parking System</h2>
+  </section>
+
+  <!-- Project Content -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+
+      <!-- Left Side: Image -->
+      <div class="w-full md:w-1/2">
+        <img src="project.png" alt="Parking System" class="photo" />
+      </div>
+
+      <!-- Right Side: Description -->
+      <div class="w-full md:w-1/2 description-box">
+        <ul class="information list-disc list-inside">
+          <li>This Intelligent Parking System is built using an ESP32 microcontroller, RFID reader, Firebase Realtime Database, and IR sensors.</li>
+          <li>When an authorized RFID tag is scanned, the gate opens, and the system checks if the car is parked in the correct spot using IR sensors.</li>
+          <li>If the car is parked correctly, it confirms the placement; otherwise, it alerts about wrong parking or if no parking occurred.</li>
+          <li>The project demonstrates real-time authentication, sensor integration, and cloud communication.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Additional Images -->
+    <div class="images">
+      <img src="parking1.png" alt="Parking Step 1" class="image" />
+      <img src="parking2.png" alt="Parking Step 2" class="image" />
+      <img src="parking3.png" alt="Parking Step 3" class="image" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    Made with ❤️ by Anish | © 2025
+  </footer>
+
+</body>
+</html>
