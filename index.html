@@ -152,13 +152,17 @@
     </svg>
     My Projects
   </a>
-
+  <a href="q3.html" target="_blank"
+  class="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-sky-400 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:brightness-110 m-4">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M9 17v-6h6v6m-2 4a10 10 0 100-20 10 10 0 000 20z" />
+  </svg>
+  Text Analyzer
+</a>
 </div>
-
-
 </div>
-
-  </div>
+</div>
 </section>
 
 <!-- Contact Links -->
@@ -193,6 +197,38 @@
 <footer class="bg-gray-100 py-4 text-center text-gray-500 text-sm">
   &copy; Anish Racherla — Designed with ❤️ and Tailwind CSS | GitHub Pages
 </footer>
+<script>
+  function getElementType(element) {
+    const tag = element.tagName.toLowerCase();
+    const type = element.getAttribute('type');
+    const role = element.getAttribute('role');
+
+    if (tag === 'img') return 'image';
+    if (tag === 'a') return 'hyperlink';
+    if (tag === 'select' || role === 'combobox') return 'drop-down';
+    if (tag === 'p' || tag === 'span' || tag === 'div') return 'text';
+    if (tag === 'button') return 'button';
+    if (tag === 'input') return `input-${type || 'text'}`;
+    return tag;
+  }
+
+  function logEvent(eventType, targetElement) {
+    const timestamp = new Date().toISOString();
+    const elementType = getElementType(targetElement);
+    console.log(`${timestamp} | ${eventType} | ${elementType}`);
+  }
+
+  window.addEventListener('load', () => {
+    logEvent('view', document.body);
+  });
+
+  document.addEventListener('click', (e) => {
+    logEvent('click', e.target);
+  });
+</script>
+
+
+
 
 </body>
 </html>
